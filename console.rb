@@ -29,5 +29,8 @@ film3 = Film.new(
 )
 film3.save()
 
+film2.title = 'Huge Disaster'
+film2.update()
+
 binding.pry
 nil
