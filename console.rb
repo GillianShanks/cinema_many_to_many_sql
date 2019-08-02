@@ -3,6 +3,7 @@ require_relative('./models/ticket.rb')
 require_relative('./models/film.rb')
 require_relative('./models/customer.rb')
 
+Customer.delete_all()
 Film.delete_all()
 
 film1 = Film.new(
