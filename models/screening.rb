@@ -47,4 +47,15 @@ class Screening
 
   end
 
+  def self.popular()
+    all_tickets = Ticket.all()
+    screenings = all_tickets.map{|ticket| ticket.screening_id}
+    time_count_hash = screenings.each_with_object(Hash.new(0)){|time, hash| hash[time] += 1}
+    sorted_hash = time_count_hash.sort_by{|screening, count| count}
+    screening_time_id=sorted_hash.last[0] #doesn't work for ties
+    pop_screening = Screening.find_by_id(screening_time_id)
+    return pop_screening
+
+  end
+
 end

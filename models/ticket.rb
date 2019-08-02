@@ -41,13 +41,6 @@ class Ticket
     SqlRunner.run(sql,values)
   end
 
-  def self.popular_ticket()
-    all_tickets = Ticket.all()
-    screenings = all_tickets.map{|ticket| ticket.screening_id}
-    time_count_hash = screenings.each_with_object(Hash.new(0)){|time, hash| hash[time] += 1}
-    sorted_hash = time_count_hash.sort_by{|screening, count| count}
-    screening_time_id=sorted_hash.last[0]
-
-  end
+  
 
 end

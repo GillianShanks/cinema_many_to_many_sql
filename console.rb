@@ -121,7 +121,7 @@ ticket1 = Ticket.new(
   {
     'film_id' => film1.id,
     'customer_id' => customer1.id,
-    'screening_id' => screening1.id
+    'screening_id' => screening3.id
   }
 )
 ticket1.save()
