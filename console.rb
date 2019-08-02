@@ -34,7 +34,7 @@ film3.save()
 customer1 = Customer.new(
   {
     'name' => 'Hermione',
-    'fund' => 30
+    'fund' => 10
   }
 )
 

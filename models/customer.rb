@@ -61,7 +61,14 @@ class Customer
     remaining_funds = @fund - price_of_movies
 
     @fund = remaining_funds
-    update()
+    # @fund -= price_of_movies
+    update() #if @fund >= 0
   end
+
+  def tickets()
+    tickets = films().count
+    return tickets
+  end
+
 
 end
