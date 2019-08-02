@@ -58,5 +58,8 @@ customer3.save()
 film2.title = 'Huge Disaster'
 film2.update()
 
+customer3.name = 'Voldemort'
+customer3.update()
+
 binding.pry
 nil
