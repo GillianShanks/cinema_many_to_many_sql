@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 class Ticket
   attr_reader :id
   attr_accessor :film_id, :customer_id
-  
+
   def initialize(ticket)
     @id = ticket['id'].to_i if ticket['id']
     @film_id = ticket['film_id'].to_i
@@ -28,5 +28,10 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM tickets"
+    tickets = SqlRunner.run(sql)
+    return tickets.map{|ticket|Ticket.new(ticket)}
+  end
 
 end
