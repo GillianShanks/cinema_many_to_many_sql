@@ -5,8 +5,12 @@ require_relative('./models/customer.rb')
 require_relative('./models/screening.rb')
 
 Ticket.delete_all()
+Screening.delete_all()
 Customer.delete_all()
 Film.delete_all()
+
+
+
 
 film1 = Film.new(
   {
@@ -31,6 +35,9 @@ film3 = Film.new(
   }
 )
 film3.save()
+
+
+
 
 customer1 = Customer.new(
   {
@@ -58,66 +65,7 @@ customer3 = Customer.new(
 customer3.save()
 
 
-ticket1 = Ticket.new(
-  {
-    'film_id' => film1.id,
-    'customer_id' => customer1.id
-  }
-)
-ticket1.save()
 
-ticket2 = Ticket.new(
-  {
-    'film_id' => film1.id,
-    'customer_id' => customer2.id
-  }
-)
-ticket2.save()
-
-
-ticket3 = Ticket.new(
-  {
-    'film_id' => film1.id,
-    'customer_id' => customer3.id
-  }
-)
-ticket3.save()
-
-
-ticket4 = Ticket.new(
-  {
-    'film_id' => film2.id,
-    'customer_id' => customer3.id
-  }
-)
-ticket4.save()
-
-
-ticket5 = Ticket.new(
-  {
-    'film_id' => film2.id,
-    'customer_id' => customer2.id
-  }
-)
-ticket5.save()
-
-
-ticket6 = Ticket.new(
-  {
-    'film_id' => film3.id,
-    'customer_id' => customer1.id
-  }
-)
-ticket6.save()
-
-
-ticket7 = Ticket.new(
-  {
-    'film_id' => film3.id,
-    'customer_id' => customer2.id
-  }
-)
-ticket7.save()
 
 screening1 = Screening.new(
   {
@@ -166,6 +114,78 @@ screening6 = Screening.new(
   }
 )
 screening6.save()
+
+
+
+ticket1 = Ticket.new(
+  {
+    'film_id' => film1.id,
+    'customer_id' => customer1.id,
+    'screening_id' => screening1.id
+  }
+)
+ticket1.save()
+
+ticket2 = Ticket.new(
+  {
+    'film_id' => film1.id,
+    'customer_id' => customer2.id,
+    'screening_id' => screening3.id
+  }
+)
+ticket2.save()
+
+
+ticket3 = Ticket.new(
+  {
+    'film_id' => film1.id,
+    'customer_id' => customer3.id,
+    'screening_id' => screening3.id
+  }
+)
+ticket3.save()
+
+
+ticket4 = Ticket.new(
+  {
+    'film_id' => film2.id,
+    'customer_id' => customer3.id,
+    'screening_id' => screening4.id
+  }
+)
+ticket4.save()
+
+
+ticket5 = Ticket.new(
+  {
+    'film_id' => film2.id,
+    'customer_id' => customer2.id,
+    'screening_id' => screening4.id
+  }
+)
+ticket5.save()
+
+
+ticket6 = Ticket.new(
+  {
+    'film_id' => film3.id,
+    'customer_id' => customer1.id,
+    'screening_id' => screening6.id
+  }
+)
+ticket6.save()
+
+
+ticket7 = Ticket.new(
+  {
+    'film_id' => film3.id,
+    'customer_id' => customer2.id,
+    'screening_id' => screening6.id
+  }
+)
+ticket7.save()
+
+
 
 
 film2.title = 'Huge Disaster'
