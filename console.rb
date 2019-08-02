@@ -118,7 +118,52 @@ ticket7 = Ticket.new(
 )
 ticket7.save()
 
+screening1 = Screening.new(
+  {
+    'screening_time' => '1800'
+    'movie_id' => movie1.id
+  }
+)
 
+
+screening2 = Screening.new(
+  {
+    'screening_time' => '2000'
+    'movie_id' => movie1.id
+  }
+)
+
+
+screening3 = Screening.new(
+  {
+    'screening_time' => '1900'
+    'movie_id' => movie2.id
+  }
+)
+
+
+screening4 = Screening.new(
+  {
+    'screening_time' => '2100'
+    'movie_id' => movie2.id
+  }
+)
+
+
+screening5 = Screening.new(
+  {
+    'screening_time' => '1700'
+    'movie_id' => movie2.id
+  }
+)
+
+
+screening6 = Screening.new(
+  {
+    'screening_time' => '1600'
+    'movie_id' => movie3.id
+  }
+)
 
 
 
