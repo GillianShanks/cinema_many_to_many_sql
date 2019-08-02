@@ -55,12 +55,14 @@ customer3 = Customer.new(
 )
 customer3.save()
 
+
 ticket1 = Ticket.new(
   {
     'film_id' => film1.id,
     'customer_id' => customer1.id
   }
 )
+ticket1.save()
 
 ticket2 = Ticket.new(
   {
@@ -68,6 +70,8 @@ ticket2 = Ticket.new(
     'customer_id' => customer2.id
   }
 )
+ticket2.save()
+
 
 ticket3 = Ticket.new(
   {
@@ -75,6 +79,8 @@ ticket3 = Ticket.new(
     'customer_id' => customer3.id
   }
 )
+ticket3.save()
+
 
 ticket4 = Ticket.new(
   {
@@ -82,6 +88,8 @@ ticket4 = Ticket.new(
     'customer_id' => customer3.id
   }
 )
+ticket4.save()
+
 
 ticket5 = Ticket.new(
   {
@@ -89,6 +97,8 @@ ticket5 = Ticket.new(
     'customer_id' => customer2.id
   }
 )
+ticket5.save()
+
 
 ticket6 = Ticket.new(
   {
@@ -96,6 +106,8 @@ ticket6 = Ticket.new(
     'customer_id' => customer1.id
   }
 )
+ticket6.save()
+
 
 ticket7 = Ticket.new(
   {
@@ -103,6 +115,8 @@ ticket7 = Ticket.new(
     'customer_id' => customer2.id
   }
 )
+ticket7.save()
+
 
 
 
