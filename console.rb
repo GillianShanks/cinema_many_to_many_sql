@@ -29,6 +29,27 @@ film3 = Film.new(
 )
 film3.save()
 
+customer1 = Customer.new(
+  {
+    'name' => 'Hermione',
+    'fund' => 20
+  }
+)
+
+customer2 = Customer.new(
+  {
+    'name' => 'Ron',
+    'fund' => 10
+  }
+)
+
+customer2 = Customer.new(
+  {
+    'name' => 'Harry',
+    'fund' => 40
+  }
+)
+
 film2.title = 'Huge Disaster'
 film2.update()
 
