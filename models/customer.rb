@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./film.rb')
 
 class Customer
 
@@ -43,5 +44,12 @@ class Customer
     values = [@id]
     SqlRunner.run(sql, values)
   end
-  
+
+  def films()
+    sql = "SELECT films.* FROM films INNER JOIN tickets ON films.id = tickets.film_id WHERE tickets.customer_id = $1"
+    values = [@id]
+    films = SqlRunner.run(sql,values)
+    return films.map{|film|Film.new(film)}
+  end
+
 end
