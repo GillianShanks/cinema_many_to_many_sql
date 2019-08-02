@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Ticket
   attr_reader :id
-  attr_accessor :film_id, :customer_id
+  attr_accessor :film_id, :customer_id, :screening_id
 
   def initialize(ticket)
     @id = ticket['id'].to_i if ticket['id']
@@ -12,9 +12,9 @@ class Ticket
   end
 
   def save()
-    sql = "INSERT INTO tickets (film_id, customer_id) VALUES ($1, $2) RETURNING id"
+    sql = "INSERT INTO tickets (film_id, customer_id, screening_id) VALUES ($1, $2, $3) RETURNING id"
 
-    values = [@film_id, @customer_id]
+    values = [@film_id, @customer_id, @screening_id]
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
@@ -41,6 +41,13 @@ class Ticket
     SqlRunner.run(sql,values)
   end
 
+  def self.popular_ticket()
+    all_tickets = Ticket.all()
+    screenings = all_tickets.map{|ticket| ticket.screening_id}
+    time_count_hash = screenings.each_with_object(Hash.new(0)){|time, hash| hash[time] += 1}
+    sorted_hash = time_count_hash.sort_by{|screening, count| count}
+    screening_time_id=sorted_hash.last[0]
 
+  end
 
 end

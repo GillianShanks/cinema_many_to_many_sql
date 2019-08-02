@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./ticket.rb')
 
 class Screening
 
@@ -24,5 +25,26 @@ class Screening
     SqlRunner.run(sql)
   end
 
+  # def self.all()
+  #   sql = "SELECT * FROM screenings"
+  #   screenings = SqlRunner.run(sql)
+  #   return screenings.map{|screening|Screening.new(screening)}
+  # end
+
+  # def tickets() #all the tickets for a screening
+  #   sql = "SELECT * FROM tickets WHERE tickets.screening_id = $1"
+  #   values = [@id]
+  #   tickets = SqlRunner.run(sql,values)
+  #   return tickets.map{|ticket|Ticket.new(ticket)}
+  #
+  # end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM screenings WHERE id = $1"
+    values = [id]
+    screening = SqlRunner.run(sql, values)[0]
+    return Screening.new(screening)
+
+  end
 
 end
