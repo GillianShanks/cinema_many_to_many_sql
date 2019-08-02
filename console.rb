@@ -9,6 +9,7 @@ film1 = Film.new(
     'price' => 5
   }
 )
+film1.save()
 
 film2 = Film.new(
   {
@@ -16,6 +17,7 @@ film2 = Film.new(
     'price' => 10
   }
 )
+film2.save()
 
 film3 = Film.new(
   {
@@ -23,6 +25,7 @@ film3 = Film.new(
     'price' => 6
   }
 )
+film3.save()
 
 binding.pry
 nil
