@@ -125,7 +125,7 @@ screening1 = Screening.new(
     'film_id' => film1.id
   }
 )
-
+screening1.save()
 
 screening2 = Screening.new(
   {
@@ -133,7 +133,7 @@ screening2 = Screening.new(
     'film_id' => film1.id
   }
 )
-
+screening2.save()
 
 screening3 = Screening.new(
   {
@@ -141,7 +141,7 @@ screening3 = Screening.new(
     'film_id' => film2.id
   }
 )
-
+screening3.save()
 
 screening4 = Screening.new(
   {
@@ -149,7 +149,7 @@ screening4 = Screening.new(
     'film_id' => film2.id
   }
 )
-
+screening4.save()
 
 screening5 = Screening.new(
   {
@@ -157,7 +157,7 @@ screening5 = Screening.new(
     'film_id' => film2.id
   }
 )
-
+screening5.save()
 
 screening6 = Screening.new(
   {
@@ -165,7 +165,7 @@ screening6 = Screening.new(
     'film_id' => film3.id
   }
 )
-
+screening6.save()
 
 
 film2.title = 'Huge Disaster'
