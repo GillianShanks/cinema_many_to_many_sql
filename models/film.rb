@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('./customer.rb')
+require_relative('./screening.rb')
 
 class Film
 
@@ -57,6 +58,20 @@ class Film
   def tickets()
     tickets = customers().count
     return tickets
+  end
+
+  def screenings()
+    sql = "SELECT * FROM screenings WHERE screenings.film_id = $1"
+
+    values = [@id]
+
+    screenings = SqlRunner.run(sql, values)
+    return screenings.map{|screening| Screening.new(screening)}
+  end
+
+  def times()
+    times_array = screenings().map{|screening| screening.screening_time}
+    # times_array.each{|time| p time}
   end
 
 end
