@@ -128,8 +128,8 @@ film2.update()
 # customer3.name = 'Voldemort'
 # customer3.update()
 
-ticket1.film_id = film2.id
-ticket1.update()
+# ticket1.film_id = film2.id
+# ticket1.update()
 
 binding.pry
 nil
