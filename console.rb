@@ -3,6 +3,8 @@ require_relative('./models/ticket.rb')
 require_relative('./models/film.rb')
 require_relative('./models/customer.rb')
 
+Film.delete_all()
+
 film1 = Film.new(
   {
     'title' => 'Happy Unicorns',
