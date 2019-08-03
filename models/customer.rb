@@ -9,7 +9,7 @@ class Customer
   def initialize(customer)
     @id = customer['id'].to_i if customer['id']
     @name = customer['name']
-    @fund = customer['fund']
+    @fund = customer['fund'].to_i
   end
 
   def save()
@@ -76,5 +76,6 @@ class Customer
     customer = SqlRunner.run(sql, values)[0]
     return Customer.new(customer)
   end
+
 
 end

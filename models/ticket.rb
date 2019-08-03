@@ -41,13 +41,28 @@ class Ticket
     SqlRunner.run(sql,values)
   end
 
+  # def customer_pays()
+  #   film = Film.find_by_id(@film_id)
+  #   customer = Customer.find_by_id(@customer_id)
+  #
+  #   price_of_film = film.price
+  #   remaining_funds = customer.fund - price_of_film
+  #
+  #   customer.fund = remaining_funds
+  #   customer.update()
+  # end
+
   def buy()
     screening = Screening.find_by_id(@screening_id)
     film = Film.find_by_id(@film_id)
+    customer = Customer.find_by_id(@customer_id)
+    #tried to make these a get_objects() function, didn't work because variables weren't assigned - could make local variables - bad?
+
     if screening.max_seats > 0
       save()
       screening.max_seats -= 1
       screening.update()
+      # customer.reduce_funds()
     end
     "There are #{screening.max_seats} tickets left for #{film.title} at #{screening.screening_time}."
   end
