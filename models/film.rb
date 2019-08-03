@@ -61,7 +61,7 @@ class Film
   end
 
   def screenings()
-    sql = "SELECT * FROM screenings WHERE screenings.film_id = $1"
+    sql = "SELECT * FROM screenings WHERE screenings.film_id = $1 ORDER BY screenings.screening_time"
 
     values = [@id]
 
@@ -71,9 +71,9 @@ class Film
 
   def times()
     times_array = screenings().map{|screening| screening.screening_time}
-    # times_array.each{|time| p time}
   end
 
+# times_array.each{|time| p time}
   def self.find_by_id(id)
     sql = "SELECT * FROM FILMS where id = $1"
     values = [id]
