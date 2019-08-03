@@ -4,17 +4,18 @@ require_relative('./ticket.rb')
 class Screening
 
   attr_reader :id
-  attr_accessor :screening_time, :film_id
+  attr_accessor :screening_time, :film_id, :max_seats
 
   def initialize(screening)
     @id = screening['id'].to_i if screening['id']
     @screening_time = screening['screening_time']
     @film_id = screening['film_id'].to_i
+    @max_seats = screening['max_seats'].to_i
   end
 
   def save()
-    sql = "INSERT INTO screenings (screening_time, film_id) VALUES ($1,$2) RETURNING id"
-    values = [@screening_time, @film_id]
+    sql = "INSERT INTO screenings (screening_time, film_id, max_seats) VALUES ($1,$2,$3) RETURNING id"
+    values = [@screening_time, @film_id, @max_seats]
 
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
@@ -25,11 +26,11 @@ class Screening
     SqlRunner.run(sql)
   end
 
-  # def self.all()
-  #   sql = "SELECT * FROM screenings"
-  #   screenings = SqlRunner.run(sql)
-  #   return screenings.map{|screening|Screening.new(screening)}
-  # end
+  def self.all()
+    sql = "SELECT * FROM screenings"
+    screenings = SqlRunner.run(sql)
+    return screenings.map{|screening|Screening.new(screening)}
+  end
 
   # def tickets() #all the tickets for a screening
   #   sql = "SELECT * FROM tickets WHERE tickets.screening_id = $1"
@@ -50,9 +51,11 @@ class Screening
   def self.popular()
     all_tickets = Ticket.all()
     screenings = all_tickets.map{|ticket| ticket.screening_id}
+
     time_count_hash = screenings.each_with_object(Hash.new(0)){|time, hash| hash[time] += 1}
     sorted_hash = time_count_hash.sort_by{|screening, count| count}
     screening_time_id=sorted_hash.last[0] #doesn't work for ties
+
     pop_screening = Screening.find_by_id(screening_time_id)
     return pop_screening
 

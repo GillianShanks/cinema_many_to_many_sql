@@ -70,7 +70,8 @@ customer3.save()
 screening1 = Screening.new(
   {
     'screening_time' => '1800',
-    'film_id' => film1.id
+    'film_id' => film1.id,
+    'max_seats' => 5
   }
 )
 screening1.save()
@@ -78,7 +79,8 @@ screening1.save()
 screening2 = Screening.new(
   {
     'screening_time' => '2000',
-    'film_id' => film1.id
+    'film_id' => film1.id,
+    'max_seats' => 5
   }
 )
 screening2.save()
@@ -86,7 +88,8 @@ screening2.save()
 screening3 = Screening.new(
   {
     'screening_time' => '1900',
-    'film_id' => film2.id
+    'film_id' => film2.id,
+    'max_seats' => 5
   }
 )
 screening3.save()
@@ -94,7 +97,8 @@ screening3.save()
 screening4 = Screening.new(
   {
     'screening_time' => '2100',
-    'film_id' => film2.id
+    'film_id' => film2.id,
+    'max_seats' => 5
   }
 )
 screening4.save()
@@ -102,7 +106,8 @@ screening4.save()
 screening5 = Screening.new(
   {
     'screening_time' => '1700',
-    'film_id' => film2.id
+    'film_id' => film2.id,
+    'max_seats' => 5
   }
 )
 screening5.save()
@@ -110,7 +115,8 @@ screening5.save()
 screening6 = Screening.new(
   {
     'screening_time' => '1600',
-    'film_id' => film3.id
+    'film_id' => film3.id,
+    'max_seats' => 5
   }
 )
 screening6.save()

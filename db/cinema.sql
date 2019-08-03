@@ -18,7 +18,8 @@ CREATE TABLE customers(
 CREATE TABLE screenings(
   id SERIAL PRIMARY KEY,
   screening_time VARCHAR(255),
-  film_id INT REFERENCES films(id) ON DELETE CASCADE
+  film_id INT REFERENCES films(id) ON DELETE CASCADE,
+  max_seats INT
 );
 
 CREATE TABLE tickets(
