@@ -70,5 +70,11 @@ class Customer
     return tickets
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM customers WHERE id = $1"
+    values =[id]
+    customer = SqlRunner.run(sql, values)[0]
+    return Customer.new(customer)
+  end
 
 end

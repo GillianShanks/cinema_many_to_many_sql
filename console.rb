@@ -89,7 +89,7 @@ screening3 = Screening.new(
   {
     'screening_time' => '1900',
     'film_id' => film2.id,
-    'max_seats' => 5
+    'max_seats' => 2
   }
 )
 screening3.save()

@@ -43,15 +43,13 @@ class Ticket
 
   def buy()
     screening = Screening.find_by_id(@screening_id)
-    # film = Film.find_by_id(@film_id)
+    film = Film.find_by_id(@film_id)
     if screening.max_seats > 0
       save()
       screening.max_seats -= 1
       screening.update()
-    else
-      "There are no tickets available for ."
     end
-
+    "There are #{screening.max_seats} tickets left for #{film.title} at #{screening.screening_time}."
   end
 
 end
