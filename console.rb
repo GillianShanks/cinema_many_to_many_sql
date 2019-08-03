@@ -130,7 +130,7 @@ ticket1 = Ticket.new(
     'screening_id' => screening3.id
   }
 )
-ticket1.save()
+ticket1.buy()
 
 ticket2 = Ticket.new(
   {
@@ -139,7 +139,7 @@ ticket2 = Ticket.new(
     'screening_id' => screening3.id
   }
 )
-ticket2.save()
+ticket2.buy()
 
 
 ticket3 = Ticket.new(
@@ -149,7 +149,7 @@ ticket3 = Ticket.new(
     'screening_id' => screening3.id
   }
 )
-ticket3.save()
+ticket3.buy()
 
 
 ticket4 = Ticket.new(
@@ -159,7 +159,7 @@ ticket4 = Ticket.new(
     'screening_id' => screening4.id
   }
 )
-ticket4.save()
+ticket4.buy()
 
 
 ticket5 = Ticket.new(
@@ -169,7 +169,7 @@ ticket5 = Ticket.new(
     'screening_id' => screening4.id
   }
 )
-ticket5.save()
+ticket5.buy()
 
 
 ticket6 = Ticket.new(
@@ -179,7 +179,7 @@ ticket6 = Ticket.new(
     'screening_id' => screening6.id
   }
 )
-ticket6.save()
+ticket6.buy()
 
 
 ticket7 = Ticket.new(
@@ -189,7 +189,7 @@ ticket7 = Ticket.new(
     'screening_id' => screening6.id
   }
 )
-ticket7.save()
+ticket7.buy()
 
 
 

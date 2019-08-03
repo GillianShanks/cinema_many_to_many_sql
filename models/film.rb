@@ -74,4 +74,12 @@ class Film
     # times_array.each{|time| p time}
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM FILMS where id = $1"
+    values = [id]
+
+    film = SqlRunner.run(sql,values)[0]
+    return Film.new(film)
+  end
+
 end

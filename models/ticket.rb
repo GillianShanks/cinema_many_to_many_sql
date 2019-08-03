@@ -41,6 +41,17 @@ class Ticket
     SqlRunner.run(sql,values)
   end
 
-  
+  def buy()
+    screening = Screening.find_by_id(@screening_id)
+    # film = Film.find_by_id(@film_id)
+    if screening.max_seats > 0
+      save()
+      screening.max_seats -= 1
+      screening.update()
+    else
+      "There are no tickets available for ."
+    end
+
+  end
 
 end

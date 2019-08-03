@@ -48,6 +48,12 @@ class Screening
 
   end
 
+  def update()
+    sql = "UPDATE screenings SET (screening_time, film_id, max_seats) = ($1, $2, $3) WHERE id = $4"
+    values = [@screening_time, @film_id, @max_seats, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.popular()
     all_tickets = Ticket.all()
     screenings = all_tickets.map{|ticket| ticket.screening_id}
